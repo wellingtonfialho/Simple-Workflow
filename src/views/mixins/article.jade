@@ -1,0 +1,36 @@
+//- Article Mixin
+
+mixin article(classe, title)
+	article(class = classe, role="article")
+		header(class = classe + '_header', role="heading")
+			h1(class = classe + '_title')= title
+		div(class = classe + '_wrapper')
+			block
+
+//- 1 - Como Usar
+
+//- Chama o mixin de article, que recebe os parâmetros classe e title
+
+//- O parâmetro classe serve para definir as classes de todos elementos contidos
+//- no mixin, enquanto o parâmetro title define o título do artigo
+	
+//- +article('content_article','About Me')
+
+//- ---------------------------------------------------------------
+
+//- 2 - Exemplo de Uso
+
+//- +article('content_article','About Me')
+
+//- ---------------------------------------------------------------
+
+//- 3 - HTML Gerado
+
+//- <article role="article" class="content_article">
+//- 	<header role="heading" class="content_article_header">
+//- 		<h1 class="content_article_title">About Me</h1>
+//- 	</header>
+//- 	<div class="content_article_wrapper">
+//- 		p Lorem Ipsum
+//- 	</div>
+//- </article>

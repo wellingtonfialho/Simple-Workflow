@@ -1,0 +1,54 @@
+// =================================== // ===================================
+// { FUNCTIONS }
+// =================================== // ===================================
+
+// Converte PX para REM
+// -----------------------------------
+pxtorem(prop, value)
+	{prop} unit(value, px)
+	{prop} unit((value / baseFontSize), rem)
+
+convertpxtorem(value)
+	return unit((value / baseFontSize), rem)
+
+// Converte PX para EM
+// -----------------------------------
+pxtoem(prop, value)
+	{prop} unit((value / baseFontSize), em)
+
+convertpxtoem(value)
+	return unit((value / baseFontSize), em)
+
+
+// 1. COMO USAR
+// -----------------------------------
+/*
+* Existem duas formas de utilizar a função de conversão de valores.
+* Você pode converter os valores de uma propriedade pré-definida ou qualquer
+* outro valor correspondente a uma propriedade.
+*
+*/
+
+// 2. EXEMPLO
+// -----------------------------------
+/*
+* 	.test
+* 			color black
+* 			pxtoem(font-size, 20) // Propriedade pré-definida.
+* 			padding convertpxtoem(12) // Conversão de valor.
+*
+*
+*/
+
+// 3. RESULTADO
+// -----------------------------------
+/*
+*		.test {
+*			color: #000;
+*			font-size: 20px;
+*			font-size: 1.25em;
+*			padding: 0.75em;
+*		}
+*
+*/
+//

@@ -1,0 +1,43 @@
+// =================================== // ===================================
+// { BUTTON }
+// =================================== // ===================================
+
+button(color = "", size = "")
+  padding: convertpxtoem(6) convertpxtoem(12)
+  text-align center
+  border-radius 4px
+  border 0
+  color flatWhite
+  background buttonColor
+  transition all 0.3s
+  if (size == medium)
+    font-size 150%
+  else if (size == big)
+    font-size 200%
+  else
+    font-size 100%
+
+  &:hover,
+  &:active,
+  &:focus
+    background darken(color,40%)
+
+  &.disabled
+    background buttonColorDisabled
+
+  &.success
+    background buttonColorSuccess
+    &:hover,
+    &:active,
+    &:focus
+      background darken(buttonColorSuccess,40%)
+
+  &.error
+    background buttonColorError
+    &:hover,
+    &:active,
+    &:focus
+      background darken(buttonColorError,40%)
+
+.content__button
+  button(buttonColor, big)

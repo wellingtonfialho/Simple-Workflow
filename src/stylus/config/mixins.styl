@@ -1,0 +1,64 @@
+// =================================== // ===================================
+// { MIXINS }
+// =================================== // ===================================
+
+// Center, horizontal and vertical
+// -----------------------------------
+center(arg = "")
+	position relative
+	if arg == top
+		top 50%
+		transform translateY(-50%)
+	else if arg == full
+		top 50%
+		left 50%
+		transform translate(-50%,-50%)
+	else
+		left 50%
+		transform translateX(-50%)
+
+// Overlay
+// -----------------------------------
+overlay(color)
+	fixed top right bottom left
+	background color
+	background rgba(color,0.2)
+
+// Hide Text Config
+// -----------------------------------
+hide-text()
+	overflow hidden
+	text-indent -9999px;
+
+// Font Size
+// -----------------------------------
+fontSize(size = baseFontSize, arg = "")
+	if (arg == rem)
+		pxtorem(font-size, size)
+	else if (arg == em)
+		pxtoem(font-size, size)
+
+// Line Height
+// -----------------------------------
+lineHeight(size = 20, arg = "")
+	if (arg == rem)
+		pxtorem(line-height, size)
+	else if (arg == em)
+		pxtoem(line-height, size)
+
+// Line Height automático, de acordo
+// com o Font-size.
+// -----------------------------------
+font(size, fontWeight = "", unit = "")
+	fontSize(size, unit)
+	if (size <= 30)
+		lineHeight((size * 1.25), unit)
+	else if (size > 30)
+		lineHeight((size * 1.15), unit)
+	else if (size > 50)
+		lineHeight((size * 1.05), unit)
+	font-weight fontWeight
+
+state()
+	&:hover
+		block

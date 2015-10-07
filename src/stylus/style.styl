@@ -1,0 +1,55 @@
+@charset "utf-8";
+
+/*!
+* { SIMPLE } - Fronted Architecture
+* Inspired by SMACSS - http://smacss.com
+* Developed with Stylus - http://learnboost.github.io/stylus/
+* Using Jeet Grid System - http://jeet.gs/
+* Using Nib Library - http://nibstyl.us/
+* -----------------------------------
+* Author: Agência Trendi - Experience Designers
+* www.trendi.com.br
+* Date: December 2014
+* -----------------------------------
+* Project Name
+* -----------------------------------
+* URL: www.project.com.br
+* Developer: Milson Jr
+* Contact: junior.milson17@gmail.com
+*/
+
+// =================================== // ===================================
+// { CONFIG }
+// =================================== // ===================================
+@require "config/variables"
+@require "config/mixins"
+@require "config/functions"
+@require "config/helpers"
+
+// =================================== // ===================================
+// { BASE }
+// =================================== // ===================================
+@import "base/reset"
+@import "base/fonts"
+@import "base/base"
+@import "base/media-queries"
+
+// =================================== // ===================================
+// { VENDORS }
+// =================================== // ===================================
+@import "vendors/flat-colors-ui.styl"
+
+// =================================== // ===================================
+// { MODULES }
+// =================================== // ===================================
+@import "modules/m-forms"
+@import "modules/m-icons"
+@import "modules/m-buttons"
+@import "modules/m-animations"
+
+// =================================== // ===================================
+// { LAYOUT }
+// =================================== // ===================================
+@import "layout/l-container"
+@import "layout/l-header"
+@import "layout/l-footer"

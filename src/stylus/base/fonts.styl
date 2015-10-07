@@ -1,0 +1,28 @@
+// =================================== // ===================================
+// { FONTS }
+// =================================== // ===================================
+
+if fontFace == true
+
+	// Define quantidade de elementos no Array
+	// É utilizada se estiver utilizando mais
+	// de uma fonte embedada
+
+	x = length(fontArray)
+
+	// Se estiver utilizando mais de uma fonte, coloque x no lugar do último 0
+	// da iteração do loop,
+	// por exemplo for i in (0...x)
+
+	for i in (0...0)
+
+		fonts = fontArray[i] // Variável contadora de cada value
+		fontFamily = fonts.name // Define cada família de fonte
+		fontFile = fonts.file // Define cada nome de arquivo de fonte
+
+		@font-face
+			font-family: fontFamily;
+			src url("fonts/"+ fontFile +".eot?#iefix") format("embedded-opentype"),
+					url("fonts/"+ fontFile +".woff") format("woff"),
+					url("fonts/"+ fontFile +".ttf")  format("truetype"),
+					url("fonts/"+ fontFile +".svg#svg" + fontFamily) format("svg")

@@ -1,0 +1,32 @@
+//- Searchbar Mixin
+
+mixin formfield(type, name, label)
+	div(class='field-' + type)
+		label(for=name) #{label}:
+		input(id=name, type=type, name=name, value=name)
+
+//- 1 - Como Usar
+
+//- Chama o mixin de searchbar, que recebe três parâmetros,
+//- type, name e label, para definir respectivamente o type e o name
+//-	do input e o conteúdo do label
+	
+//- +formfield('email','name','UserName')
+
+//- ---------------------------------------------------------------
+
+//- 2 - Exemplo de Uso
+
+//- form
+//- 	+formfield('email','name','UserName')
+
+//- ---------------------------------------------------------------
+
+//- 3 - HTML Gerado
+
+//- <form>
+//-       <div class="field-email">
+//-         <label for="name">UserName:</label>
+//-         <input id="name" type="email" name="name" value="name">
+//-       </div>
+//- </form>

@@ -1,0 +1,31 @@
+//- Searchbar Mixin
+
+mixin searchbar(classe)
+	form(class = classe, role="search")
+		div
+			label(id="searchbar" class = classe + '_label')
+			input(for="searchbar", type="search", class = classe + '_control', placeholder="search")
+			button(class = classe + '_icon icon-search')
+
+//- 1 - Como Usar
+
+//- Chama o mixin de searchbar, que recebe o parâmetro class
+	
+//- +searchbar('searchbar')
+
+//- ---------------------------------------------------------------
+
+//- 2 - Exemplo de Uso
+
+//- +searchbar('searchbar')
+
+//- ---------------------------------------------------------------
+
+//- 3 - HTML Gerado
+
+//- <form class="searchbar">
+//-   <div>
+//-     <input type="search" class="searchbar_control">
+//-     <button class="searchbar_icon icon-search"></button>
+//-   </div>
+//- </form>

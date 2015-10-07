@@ -1,0 +1,31 @@
+//- List Mixin
+
+mixin list(classe, ...items)
+	ul(class = classe)
+		each item in items
+			li= item
+
+//- 1 - Como Usar
+
+//- Chama o mixin de list, que recebe os parâmetros classe e items
+
+//- Cada parâmetro item corresponde a um item da lista e se respectivo conteúdo
+	
+//- +list('content__list','list-item1','list-item2','list-item3','list-item4')
+
+//- ---------------------------------------------------------------
+
+//- 2 - Exemplo de Uso
+
+//- +list('content__list','list-item1','list-item2','list-item3','list-item4')
+
+//- ---------------------------------------------------------------
+
+//- 3 - HTML Gerado
+
+//-	<ul class="content_list">
+//-		<li>list-item1</li>
+//-		<li>list-item2</li>
+//-		<li>list-item3</li>
+//-		<li>list-item4</li>
+//-	</ul>

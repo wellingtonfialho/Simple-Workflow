@@ -1,0 +1,158 @@
+// =================================== // ===================================
+// { VARIABLES }
+// =================================== // ===================================
+
+// =================================== // ===================================
+// { FONTS }
+// =================================== // ===================================
+
+/*
+* Define tamanho padrão de fonte para
+* ser utilizado como referência no
+* cálculo de em e rem.
+*/
+// ===================================
+baseFontSize = 16
+
+/*
+* Define se no projeto está sendo
+* utilizado @fontFace para embedar
+* arquivos de fonte, assim não será
+* compilado código desnecessário.
+*
+* Lembrando que utilizar arquivos de fonte
+* diretamente embedados no projeto
+* interfere diretamente na performance
+* do projeto.
+*
+* Se possível utilize Google Fonts
+* https://www.google.com/fonts
+*/
+// ===================================
+fontFace = true
+
+/*
+* Array para definir fontes a serem
+* embedadas.
+* Cada chave contém as propriedades name,
+* que define o nome da família da fonte e
+* file que define o nome do arquivo.
+*/
+// ===================================
+fontArray = (	\
+	{name: "Arial", file: "arial"} \
+)
+
+// =================================== // ===================================
+// { COLORS }
+// =================================== // ===================================
+
+/*
+* Heading's color.
+* Define a cor padrão dos títulos.
+*/
+// -----------------------------------
+colorHeading =	#555
+
+/*
+* Content color.
+* Define a cor padrão do conteúdo.
+*/
+// -----------------------------------
+colorText =	#777
+
+/*
+* Link's color.
+* Define a cor padrão para links.
+*/
+// -----------------------------------
+colorLink =	#999
+
+/*
+* Featured color.
+* Define a cor padrão para destaques.
+*/
+// -----------------------------------
+colorFeatured =	#000
+
+/*
+* Main colors.
+* Principais cores utilizadas no projeto.
+*/
+// -----------------------------------
+primaryColor = #ccc
+secondaryColor = #ddd
+tertiaryColor = #eee
+quaternaryColor = #fff
+
+/*
+* Button colors.
+* Define a cor de botões e seus respectivos estados.
+*/
+// -----------------------------------
+buttonColor = flatBlue // Paleta de cores flat em vendors
+buttonColorDisabled = flatSilver // Paleta de cores flat em vendors
+buttonColorSuccess = flatGreen // Paleta de cores flat em vendors
+buttonColorError = flatRed // Paleta de cores flat em vendors
+
+
+// =================================== // ===================================
+// { BOX MODEL }
+// =================================== // ===================================
+
+/*
+* Container Width
+* Define a largura padrão do container.
+*/
+// -----------------------------------
+containerWidth = 94%
+
+/*
+* Space
+* Define espaçamento padrão para ser
+* utilizado em todo projeto, evitando
+* números quebrados.
+*/
+// -----------------------------------
+space =	20px
+
+// =================================== // ===================================
+// { BREAKPOINTS }
+// =================================== // ===================================
+
+/*
+* Small Breakpoint.
+* Define breakpoint para dispositivos
+* com telas menores.
+*/
+// -----------------------------------
+smallBp = 599
+smallBpMax = smallBp
+
+/*
+* Medium Breakpoint.
+* Define breakpoint para dispositivos
+* com telas intermediárias (tablets).
+*/
+// -----------------------------------
+mediumBp = 600
+mediumBpMin = mediumBp
+mediumBpMax = largeBp - 1
+
+/*
+* Large Breakpoint.
+* Define breakpoint para desktops.
+*/
+// -----------------------------------
+largeBp = 940
+largeBpMin = largeBp
+largeBpMax = fullBp - 1
+
+/*
+* Extra large Breakpoint.
+* Define breakpoint para telas acima
+* de 1280px.
+*/
+// -----------------------------------
+fullBp = 1680
+fullBpMin = fullBp

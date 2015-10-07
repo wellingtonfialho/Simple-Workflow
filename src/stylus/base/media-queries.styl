@@ -1,0 +1,132 @@
+// =================================== // ===================================
+// { MEDIA QUERIES }
+// =================================== // ===================================
+
+// Mobile Media Queries Config
+// -----------------------------------
+mobile = "screen and (max-width: " + convertpxtoem(smallBp) + ")";
+
+// Tablet Media Queries Config
+// -----------------------------------
+tablet = "screen and (min-width: " + convertpxtoem(mediumBp) + ")";
+tabletMax = "screen and (max-width: " + convertpxtoem(mediumBpMax) + ")";
+only-tablet = "screen and (min-width: " + convertpxtoem(mediumBpMin) + ") and (max-width: " + convertpxtoem(mediumBpMax) +")";
+
+// Desktop Media Queries Config
+// -----------------------------------
+desktop = "screen and (min-width: " + convertpxtoem(largeBp) + ")";
+desktopMax = "screen and (max-width: " + convertpxtoem(largeBpMax) + ")";
+only-desktop = "screen and (min-width: " + convertpxtoem(largeBpMin) + ") and (max-width: " + convertpxtoem(largeBpMax) +")";
+
+// Large Desktop Media Queries Config
+// -----------------------------------
+full = "screen and (min-width: " + convertpxtoem(fullBp) + ")";
+
+// =================================== // ===================================
+// { BLOCK MIXINS - MEDIA QUERIES }
+// =================================== // ===================================
+
+// Media Block Mixin
+// -----------------------------------
+/*
+* Recebe um breakpoint como parâmetro,
+* deve ser utilizado em media-queries
+* cujos breakpoints já estão pré-definidos.
+*/
+media(device)
+  @media device {
+    block
+  }
+
+// Max Block Mixin
+// -----------------------------------
+/*
+* Recebe como parâmetro um valor em px
+* para definir um valor de max-width na media querie.
+*/
+max(max)
+  @media screen and (max-width: convertpxtoem(max)) {
+    block
+  }
+
+// Min Block Mixin
+// -----------------------------------
+/*
+* Recebe como parâmetro um valor em px
+* para definir um valor de min-width na media querie.
+*/
+min(min)
+  @media screen and (min-width: convertpxtoem(min)) {
+    block
+  }
+
+// Between Block Mixin
+// -----------------------------------
+/*
+* Recebe como parâmetro dois valores em px
+* para definir um valor de min-width e outro de max-width na media querie.
+*/
+between(min, max)
+  @media screen and (min-width: convertpxtoem(min)) and (max-width: convertpxtoem(max)) {
+    block
+  }
+
+
+// 1. COMO USAR
+// -----------------------------------
+/*
+* Para utilizar o recurso de media-queries,
+* é necessário usar o Mixin +media() com o parâmetro do
+* breakpoint desejado.
+*
+* Caso seja necessário
+* personalizar o valor dos breakpoints:
+*
+* +min() - Define media querie com min-width.
+* +max() - Define media querie com max-width.
+* +between() - Define media querie com min e max.
+*/
+
+// 2. EXEMPLO
+// -----------------------------------
+/*
+* .test
+*   background black
+*   +media(mobile)
+*     background red
+*   +min(630)
+*     background green
+*   +max(1200)
+*     background beige
+*   +between(mediumBp, fullBp)
+*     color: #444;
+*/
+
+// 3. RESULTADO
+// -----------------------------------
+/*
+*  .test {
+*    background: #000;
+*  }
+*  @media screen and (max-width: 37.4375em) {
+*    .test {
+*      background: #f00;
+*    }
+*  }
+*  @media screen and (min-width: 39.375em) {
+*    .test {
+*      background: #008000;
+*    }
+*  }
+*  @media screen and (max-width: 75em) {
+*    .test {
+*      background: #f5f5dc;
+*    }
+*  }
+*  @media screen and (min-width: 37.5em) and (max-width: 105em) {
+*    .test {
+*      color: #444;
+*    }
+*  }
+*/
+//

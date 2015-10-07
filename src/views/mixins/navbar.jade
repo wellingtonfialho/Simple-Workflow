@@ -1,0 +1,42 @@
+//- Navbar Mixin
+
+mixin navbar(classe)
+	nav(role="navigation", class = classe)
+		ul(role="menubar")
+			block
+mixin navitem(classe, title, href)
+	li(class = classe, role="presentation")
+		a(title= title, href = href, role="menuitem")
+			block
+
+//- 1 - Como Usar
+
+//- Chama o mixin de navbar, que recebe o parâmetro class
+	
+//- +navbar('header__navigation')
+
+//- Chama o mixin de navbaritem, que recebe três parâmetros, a
+//- classe do item, o title e href do link
+	
+//- +navitem('header__navigation-item','Home', 'test.html') Home
+
+//- ---------------------------------------------------------------
+
+//- 2 - Exemplo de Uso
+
+//- +navbar('header__navigation')
+//- +navitem('header__navigation-item','Home', 'test.html') Home
+//- +navitem('header__navigation-item','About', 'test.html') About
+//- +navitem('header__navigation-item','Contact', 'test.html') Contact
+
+//- ---------------------------------------------------------------
+
+//- 3 - HTML Gerado
+
+//-	<nav role="navigation" class="header__navigation">
+//-		<ul role="menu">
+//-			<li class="header__navigation-item"><a title="Home" href="test.html">Home</a></li>
+//-			<li class="header__navigation-item"><a title="About" href="test.html">About</a></li>
+//-			<li class="header__navigation-item"><a title="Contact" href="test.html">Contact</a></li>
+//-		</ul>
+//-	</nav>
